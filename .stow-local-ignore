@@ -15,3 +15,4 @@ unixchad.asc
 install-root.sh
 install-user.sh
 install-pkgs.sh
+^/X230-LOCAL.*
