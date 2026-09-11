@@ -109,3 +109,6 @@ ZSH_HIGHLIGHT_STYLES[arg0]=fg=green,bold;
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=cyan;
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=cyan;
 ZSH_HIGHLIGHT_STYLES[comment]=fg=8; # comments and unset variables
+
+# X230 本机改动：st 下 catimg/chafa 等启用 24-bit 真彩渲染（详见 X230-LOCAL.md）
+export COLORTERM=truecolor
