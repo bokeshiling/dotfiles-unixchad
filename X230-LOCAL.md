@@ -28,3 +28,25 @@ git merge origin/master        # 或 git rebase
   （upstream 默认会互换 Alt/Super；本机保持物理 Win 键作为 dwm 的 Mod4）。
 - **`~/.config/layout.xkb`**：保留 upstream 版本但**不加载**，原因同上
   （该文件的核心就是 Alt/Super 互换）。
+
+## 不在本仓库内、换机器会踩的坑
+
+- **`~/.gitconfig` 不由 stow 管理**（upstream 未收录该文件）。本机已手工创建：
+
+  ```ini
+  [user]
+      name = bokeshiling
+      email = shiling142857@gmail.com
+  [commit]
+      gpgsign = false
+  ```
+
+  本机没有 `bokeshiling` 的 GPG 私钥，故关闭了签名。若要在本机恢复签名：
+  导入私钥后把 `gpgsign` 改回 `true`。
+
+- **dwm 需单独编译安装**：本仓库不含二进制。源码在
+  [bokeshiling/dwm-unixchad](https://github.com/bokeshiling/dwm-unixchad)，
+  构建 `~/Projects/dwm-unixchad` 后 `sudo make install`（装到 `/usr/local/bin/dwm`）。
+
+- **niri/waybar/full-nvim/kitty/alacritty** 属于另一套桌面配置，已归档在
+  `~/dotfiles-desktop`，不在本 fork 内。
