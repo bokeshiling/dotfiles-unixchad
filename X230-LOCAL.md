@@ -60,6 +60,8 @@ git merge origin/master        # 或 git rebase
   能进 PATH 的唯一原因。缺了它 cargo/rustup 工具全部不可用。**
 - **`~/.bash_profile`**、**`~/.bash_logout`**：本地文件，同样未纳入 fork。
 - **`~/.gitconfig`**：本地文件，见上一节。
+- **`~/.vimrc`**：本地文件（41 行，vim-plug + onedark 主题 + airline 状态栏），
+  插件在 `~/.vim/plugged/`（已存在）。
 - **`~/.local/bin/` 下的外部软链**：已收录进 fork，但目标属于系统/npm，换机需目标存在：
 
   | 链接 | 目标 |
@@ -67,3 +69,9 @@ git merge origin/master        # 或 git rebase
   | `battery-care` `clean` `sysup` 等 16 个 | `/usr/lib/shorin-contrib/*`（包 `shorin-contrib-git`）|
   | `dsh` | `~/.local/share/npm/bin/dsh` |
   | `dwm` | `/usr/local/bin/dwm` |
+
+> **注意 vim 配置的遮蔽关系**：vim 的读取顺序是
+> `~/.vimrc` → `~/.vim/vimrc` → `~/.config/vim/vimrc`。
+> 本机恢复了 `~/.vimrc`，因此 **fork 自带的 `~/.config/vim/vimrc`
+> 不会生效**。若要改用 fork 那套（无插件，带 cc=80 标尺与尾随空格高亮），
+> 删除或改名 `~/.vimrc` 即可。
