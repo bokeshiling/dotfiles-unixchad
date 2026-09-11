@@ -50,3 +50,20 @@ git merge origin/master        # 或 git rebase
 
 - **niri/waybar/full-nvim/kitty/alacritty** 属于另一套桌面配置，已归档在
   `~/dotfiles-desktop`，不在本 fork 内。
+
+## 机器本地、不在 stow 之外管理的项
+
+以下内容**不由 fork 的 stow 管理**，换机器或重装需要重新创建（本机已恢复）：
+
+- **`~/.zshenv`**：内容为 `. "$HOME/.cargo/env"`。upstream 的 `.gitignore`
+  白名单未放行 `.zshenv`，故保持为本地文件。**这是 `miyu`（`~/.cargo/bin/miyu`）
+  能进 PATH 的唯一原因。缺了它 cargo/rustup 工具全部不可用。**
+- **`~/.bash_profile`**、**`~/.bash_logout`**：本地文件，同样未纳入 fork。
+- **`~/.gitconfig`**：本地文件，见上一节。
+- **`~/.local/bin/` 下的外部软链**：已收录进 fork，但目标属于系统/npm，换机需目标存在：
+
+  | 链接 | 目标 |
+  |:---|:---|
+  | `battery-care` `clean` `sysup` 等 16 个 | `/usr/lib/shorin-contrib/*`（包 `shorin-contrib-git`）|
+  | `dsh` | `~/.local/share/npm/bin/dsh` |
+  | `dwm` | `/usr/local/bin/dwm` |
