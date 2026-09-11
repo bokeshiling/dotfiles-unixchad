@@ -2,6 +2,7 @@
 *
 
 #exception
+!X230-LOCAL.md
 !.gitignore
 !.stow-local-ignore
 !LICENSE
